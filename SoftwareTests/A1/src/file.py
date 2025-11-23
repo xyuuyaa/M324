@@ -10,6 +10,6 @@ class File:
     def read_from_file(filename: str):
         try:
             with open(filename, 'r') as f:
-                print(f.read())
+                return f.read()
         except FileNotFoundError:
-            print(f"Error: '{filename}' does not exist.")
+            return f"Error: {filename} does not exist."

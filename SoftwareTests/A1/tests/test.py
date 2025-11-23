@@ -1,9 +1,13 @@
 import unittest
-from src.File import *
+from src.file import File
 import os
 
 class TestFile(unittest.TestCase):
     test_file = "test_file.txt"
+
+    def tearDown(self):
+        if os.path.exists(self.test_file):
+            os.remove(self.test_file)
 
     def test_create_file(self):
         File.create_file(self.test_file)
@@ -19,9 +23,9 @@ class TestFile(unittest.TestCase):
     def test_read_from_file(self):
         # test first case: file does not exist
         result = File.read_from_file(self.test_file)
-        self.assertEqual(result, f"Error: '{self.test_file}' does not exist.")
+        self.assertEqual(result, f"Error: {self.test_file} does not exist.")
         
         # test second case: file exists
         File.create_file(self.test_file)
-        result = File.read_from_file(self.TEST_FILE)
+        result = File.read_from_file(self.test_file)
         self.assertEqual(result, '')

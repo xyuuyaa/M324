@@ -1,6 +1,6 @@
 .PHONY: test
 
-test: src/File.py tests/File_test.py
+test: src/file.py tests/test.py
 	# run tests with coverage
 	python3 -m coverage run -m unittest discover tests
 	python3 -m coverage report -m
