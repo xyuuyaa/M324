@@ -1,7 +1,6 @@
-from house import *
+from house import set_name, get_name
 
 villa = House()
-# cottage = House()
 
-villa.SetName("Neverland")
-villa.GetName()
+villa.set_name("Neverland")
+villa.get_name()

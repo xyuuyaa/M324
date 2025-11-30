@@ -4,11 +4,11 @@ linting: coverage.xml
 	docker run --rm \
 		-e SONAR_HOST_URL="http://sonarqube:9000" \
 		-e SONAR_SCANNER_OPTS="-Dsonar.projectKey=house" \
-		-e SONAR_TOKEN="your_token" \
+		-e SONAR_TOKEN="squ_e473597280d62bc63dbc72ce988aa1c6d6639344" \
 		--network sonar-net \
 		-v .:/usr/src \
 		-u $(id -u):$(id -g) \
-		sonarsource/sonar-scanner-cli
+		sonarsource/sonar-scanner-cli:latest
 
 	rm -f coverage.xml
 
