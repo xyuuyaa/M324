@@ -1,0 +1,4 @@
+external:
+  stage: build
+  script: 
+    - echo "from pipeline_1"

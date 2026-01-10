@@ -1,0 +1,11 @@
+include:
+  - local: pipelines/pipeline_1.yml
+  - local: pipelines/pipeline_2.yml
+
+stages:
+  - build
+
+internal:
+  stage: build
+  script:
+    - echo "from root pipeline"
